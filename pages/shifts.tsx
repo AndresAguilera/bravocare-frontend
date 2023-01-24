@@ -1,46 +1,7 @@
 import Head from "next/head";
-import useShifts from "@/hooks/queries/useShifts";
-import { Shift } from "@/model/shift";
-import { useState } from "react";
+import ShiftGrid from "@/components/ShiftGrid";
 
 const Shifts = () => {
-  const { shifts, isLoading } = useShifts();
-  const [checked, setChecked] = useState<string[]>([]);
-
-  const onSelect = (shift: Shift) => {
-    const id = shift.shift_id;
-    if (checked.includes(id)) return setChecked(checked.filter((v: string) => v !== id));
-    else setChecked( [...checked, shift.shift_id ]);
-  };
-
-  const disabled = checked.length !== 2
-
-  // TODO: implement form for checkboxes and button
-  const renderShifts = () => {
-    return (
-      <table>
-        <thead>
-          <th>Facility Name</th>
-          <th>Shift Date</th>
-          <th>Start Time</th>
-          <th>End Time</th>
-          <th></th>
-        </thead>
-        {shifts.map((shift: Shift) => (
-          <tbody key={shift.shift_id}>
-            <td>{shift.facility.facility_name}</td>
-            <td>{shift.shift_date}</td>
-            <td>{shift.start_time}</td>
-            <td>{shift.end_time}</td>
-            <td>
-              <input type="checkbox" onChange={() => onSelect(shift)} />
-            </td>
-          </tbody>
-        ))}
-        <button disabled={disabled}>Compare</button>
-      </table>
-    );
-  };
   return (
     <>
       <Head>
@@ -50,11 +11,7 @@ const Shifts = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        Shifts:
-        <>
-          {isLoading && "Loading shifts..."}
-          {!isLoading && renderShifts()}
-        </>
+        <ShiftGrid />
       </main>
     </>
   );
