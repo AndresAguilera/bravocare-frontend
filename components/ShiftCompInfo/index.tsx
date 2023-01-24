@@ -15,7 +15,7 @@ const ShiftCompInfo = ({ shifts }: ShiftCompInfoProps) => {
         <div>Max overlap Threshold: </div>
         <div>Exceeds Overlap Threshold: </div>
       </div>
-      <button disabled={disabled}>Compare Shifts</button>
+      <button disabled={disabled} onClick={() => console.log("Mutation")}>Compare Shifts</button>
     </S.Container>
   );
 };

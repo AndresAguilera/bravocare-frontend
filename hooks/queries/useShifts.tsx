@@ -7,6 +7,8 @@ const useShifts = () => {
     queryKey: ["allShifts"],
     queryFn: () => getAllShifts(),
   });
+
+
   return { shifts, ...queryData };
 };
 

@@ -5,12 +5,17 @@ export const Box: StyledComponent<any, any> = styled.div<ShiftBoxProps>`
   width: 25%;
   padding: 10px 5px;
   margin: 10px;
-  height: 100%;
   text-align: center;
-  background: ${props => props.disabled ? "gray" : props.selected ? "cornflowerblue" : "transparent"};
+  border: 1px solid dimgrey;
+  border-radius: 2px;
+  background: ${(props) =>
+    props.disabled
+      ? "gray"
+      : props.selected
+      ? "cornflowerblue"
+      : "transparent"};
 
   :hover {
-    background: cornflowerblue;
     cursor: pointer;
   }
 `;

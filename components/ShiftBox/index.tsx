@@ -14,7 +14,7 @@ const ShiftBox = ({ shift, onClick, selected, disabled }: ShiftBoxProps) => {
   const { facility_name } = facility;
 
   return (
-    <S.Box onClick={() => onClick(shift_id)} selected={selected} disabled={disabled}>
+    <S.Box onClick={() => !disabled ? onClick(shift_id) : () => {}} selected={selected} disabled={disabled}>
       <div>{facility_name}</div>
       <div>{shift_date}</div>
       <div>
