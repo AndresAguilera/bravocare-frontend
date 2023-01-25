@@ -14,7 +14,7 @@ const ShiftCompInfo = ({ shifts }: ShiftCompInfoProps) => {
     <S.Container>
       <div>
         <div>Overlap Minutes: {mutation.data?.overlap_minutes}</div>
-        <div>Max overlap Threshold: {mutation.data?.max_overlap_threshold}</div>
+        <div>Max Overlap Threshold: {mutation.data?.max_overlap_threshold}</div>
         <div>
           Exceeds Overlap Threshold:{" "}
           {mutation.data?.exceeds_overlap_threshold.toString()}
