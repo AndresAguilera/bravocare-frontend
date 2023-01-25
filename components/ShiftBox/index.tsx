@@ -17,7 +17,7 @@ const ShiftBox = ({ shift, onClick, selected, disabled }: ShiftBoxProps) => {
     <S.Box onClick={() => !disabled ? onClick(shift_id) : () => {}} selected={selected} disabled={disabled}>
       <div>{facility_name}</div>
       <div>{shift_date}</div>
-      <div>
+      <div style={{ whiteSpace: "nowrap"}}>
         {start_time} - {end_time}
       </div>
     </S.Box>

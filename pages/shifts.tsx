@@ -11,7 +11,9 @@ const Shifts = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <ShiftGrid />
+        <div style={{ width: "80%", margin: "auto" }}>
+          <ShiftGrid />
+        </div>
       </main>
     </>
   );
